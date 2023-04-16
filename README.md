@@ -72,7 +72,12 @@ docker pull hmbsbige/stunserver
 docker run -d --restart=always --net=host --name=stunserver hmbsbige/stunserver --mode full --primaryinterface $IP1 --altinterface $IP2
 ```
 NAT0: OpenInternet，没有经过NAT地址转换，公网IP
+
 NAT1: Full Cone NAT，动态家宽可以达到最优的状态，外网设备可以主动发信息给NAT1网络内的设备。
+
 NAT2: Address-Restricted Cone NAT，只有内网设备(地址:任意端口)主动发过信息给外网设备，外网设备才能主动连接NAT2的该设备的地址(地址:任意端口)
+
 NAT3: Port-Restricted Cone NAT，只有内网设备(地址:指定端口)主动发过信息给外网设备，外网设备才能主动连接NAT3的该设备的地址(地址:指定端口)，限制为通信过的端口
+
 NAT4: Symmetric NAT，只能和NAT0设备通讯
+
